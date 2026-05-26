@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FPS PSO Final Theory Exam — Study Guide</title>
+<title>FPS PSO Theory Exam — Advanced Practice Test #2</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Oswald:wght@500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
@@ -18,7 +18,6 @@
     --accent-soft: #c9a03220;
     --danger: #c4533a;
     --ok: #6b8e3f;
-    --fed-blue: #4a6fa5;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
@@ -37,14 +36,14 @@
 
   .header {
     border: 1px solid var(--rule);
-    border-left: 4px solid var(--accent);
+    border-left: 4px solid var(--danger);
     padding: 28px 32px;
-    margin-bottom: 48px;
+    margin-bottom: 40px;
     background: linear-gradient(180deg, #18191510, transparent);
     position: relative;
   }
   .header::before {
-    content: "RESTRICTED · TRAINING USE ONLY";
+    content: "ADVANCED · TRAINING USE ONLY";
     position: absolute;
     top: 10px;
     right: 14px;
@@ -56,7 +55,7 @@
   .eyebrow {
     font-family: 'JetBrains Mono', monospace;
     font-size: 11px;
-    color: var(--accent);
+    color: var(--danger);
     letter-spacing: 0.2em;
     text-transform: uppercase;
     margin-bottom: 12px;
@@ -71,257 +70,24 @@
     color: var(--ink);
     margin-bottom: 14px;
   }
-  h1 .accent { color: var(--accent); }
+  h1 .accent { color: var(--danger); }
   .subtitle {
     font-style: italic;
     color: var(--ink-dim);
     font-size: 17px;
-    max-width: 60ch;
+    max-width: 62ch;
   }
 
-  .facts {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-    gap: 1px;
-    background: var(--rule);
+  .brief {
     border: 1px solid var(--rule);
-    margin: 36px 0 48px;
-  }
-  .fact {
-    background: var(--bg);
-    padding: 18px 20px;
-  }
-  .fact-label {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    color: var(--ink-dim);
-    margin-bottom: 6px;
-  }
-  .fact-value {
-    font-family: 'Oswald', sans-serif;
-    font-size: 22px;
-    color: var(--ink);
-    font-weight: 600;
-  }
-  .fact-value .small { font-size: 13px; color: var(--ink-dim); font-weight: 400; }
-
-  .toc {
-    border-top: 1px solid var(--rule);
-    border-bottom: 1px solid var(--rule);
-    padding: 24px 0;
-    margin-bottom: 48px;
-  }
-  .toc-title {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.2em;
-    color: var(--ink-dim);
-    text-transform: uppercase;
-    margin-bottom: 14px;
-  }
-  .toc ol {
-    list-style: none;
-    counter-reset: toc;
-    columns: 2;
-    column-gap: 36px;
-  }
-  .toc li {
-    counter-increment: toc;
-    padding: 4px 0;
-    break-inside: avoid;
-  }
-  .toc li::before {
-    content: counter(toc, decimal-leading-zero);
-    font-family: 'JetBrains Mono', monospace;
-    color: var(--accent);
-    font-size: 12px;
-    margin-right: 10px;
-  }
-  .toc a {
-    color: var(--ink);
-    text-decoration: none;
-    border-bottom: 1px dotted var(--rule);
-    transition: color 0.2s, border-color 0.2s;
-  }
-  .toc a:hover { color: var(--accent); border-color: var(--accent); }
-
-  section { margin-bottom: 56px; scroll-margin-top: 20px; }
-  h2 {
-    font-family: 'Oswald', sans-serif;
-    font-weight: 600;
-    font-size: 26px;
-    text-transform: uppercase;
-    letter-spacing: 0.02em;
-    margin-bottom: 6px;
-    padding-bottom: 12px;
-    border-bottom: 1px solid var(--rule);
-    display: flex;
-    align-items: baseline;
-    gap: 14px;
-  }
-  h2 .num {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 14px;
-    color: var(--accent);
-    font-weight: 400;
-  }
-  h3 {
-    font-family: 'Oswald', sans-serif;
-    font-weight: 500;
-    font-size: 18px;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-    color: var(--accent);
-    margin: 28px 0 12px;
-  }
-  p { margin-bottom: 14px; }
-  ul, ol { margin: 12px 0 18px 24px; }
-  li { margin-bottom: 8px; }
-  strong { color: #f5f0e0; font-weight: 600; }
-  em { color: var(--ink-dim); }
-  code {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.88em;
-    background: var(--panel);
-    padding: 2px 6px;
-    border-radius: 2px;
-    color: var(--accent);
-  }
-
-  .callout {
-    background: var(--accent-soft);
-    border-left: 3px solid var(--accent);
-    padding: 16px 20px;
-    margin: 20px 0;
-    font-family: 'Source Serif 4', serif;
-    font-style: italic;
-  }
-  .callout strong { font-style: normal; color: var(--accent); }
-  .warning {
-    background: #c4533a15;
-    border-left: 3px solid var(--danger);
-  }
-  .warning strong { color: var(--danger); }
-
-  dl.kv {
-    border-top: 1px solid var(--rule);
-    margin: 16px 0;
-  }
-  dl.kv > div {
-    display: grid;
-    grid-template-columns: 200px 1fr;
-    gap: 24px;
-    padding: 14px 0;
-    border-bottom: 1px solid var(--rule);
-  }
-  dl.kv dt {
-    font-family: 'Oswald', sans-serif;
-    text-transform: uppercase;
-    font-size: 13px;
-    letter-spacing: 0.05em;
-    color: var(--accent);
-  }
-  dl.kv dd { color: var(--ink); }
-
-  .stat-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 0;
-    border: 1px solid var(--rule);
-    margin: 20px 0;
-  }
-  .stat {
-    padding: 16px 20px;
-    border-right: 1px solid var(--rule);
-    border-bottom: 1px solid var(--rule);
-  }
-  .stat:last-child { border-right: 0; }
-  .stat-name {
-    font-family: 'Oswald', sans-serif;
-    text-transform: uppercase;
-    font-size: 13px;
-    letter-spacing: 0.05em;
-    color: var(--accent);
-    margin-bottom: 4px;
-  }
-  .stat-desc { font-size: 14px; color: var(--ink-dim); line-height: 1.5; }
-
-  .quiz-intro {
-    text-align: center;
-    margin: 60px 0 40px;
-  }
-  .quiz-intro h2 {
-    border: none;
-    justify-content: center;
-    font-size: 32px;
-    padding: 0;
-  }
-  .quiz-intro p { color: var(--ink-dim); }
-
-  .quiz-card {
-    background: var(--panel);
-    border: 1px solid var(--rule);
-    padding: 24px 26px;
-    margin-bottom: 16px;
-    transition: border-color 0.2s;
-  }
-  .quiz-card:hover { border-color: #3a3c34; }
-  .qnum {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    color: var(--accent);
-    letter-spacing: 0.15em;
-    margin-bottom: 8px;
-  }
-  .question {
-    font-family: 'Source Serif 4', serif;
-    font-size: 18px;
-    margin-bottom: 16px;
-    color: var(--ink);
-  }
-  .options { list-style: none; margin: 0; }
-  .option {
-    padding: 10px 14px;
-    margin: 6px 0;
-    border: 1px solid var(--rule);
-    cursor: pointer;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 14px;
-    color: var(--ink);
-    transition: all 0.15s;
-    user-select: none;
-  }
-  .option:hover { border-color: var(--accent); background: var(--accent-soft); }
-  .option.correct {
-    border-color: var(--ok);
-    background: #6b8e3f25;
-    color: #b8d189;
-  }
-  .option.incorrect {
-    border-color: var(--danger);
-    background: #c4533a20;
-    color: #e8a394;
-  }
-  .option .letter {
-    display: inline-block;
-    width: 24px;
-    color: var(--accent);
-    font-weight: 700;
-  }
-  .explain {
-    margin-top: 14px;
-    padding: 12px 16px;
-    background: var(--bg);
-    border-left: 2px solid var(--accent);
-    font-style: italic;
+    padding: 20px 24px;
+    margin-bottom: 32px;
     font-size: 15px;
     color: var(--ink-dim);
-    display: none;
   }
-  .explain.show { display: block; }
-  .explain strong { font-style: normal; color: var(--accent); }
+  .brief strong { color: var(--accent); }
+  .brief ul { margin: 10px 0 0 20px; }
+  .brief li { margin-bottom: 6px; }
 
   .score-panel {
     position: sticky;
@@ -355,8 +121,98 @@
   .score-status.pass { color: var(--ok); }
   .score-status.fail { color: var(--danger); }
 
+  .quiz-card {
+    background: var(--panel);
+    border: 1px solid var(--rule);
+    padding: 24px 26px;
+    margin-bottom: 16px;
+    transition: border-color 0.2s;
+  }
+  .quiz-card:hover { border-color: #3a3c34; }
+  .qnum {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--accent);
+    letter-spacing: 0.15em;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .qtag {
+    color: var(--ink-dim);
+    font-size: 10px;
+  }
+  .question {
+    font-family: 'Source Serif 4', serif;
+    font-size: 18px;
+    margin-bottom: 16px;
+    color: var(--ink);
+    line-height: 1.55;
+  }
+  .options { list-style: none; margin: 0; }
+  .option {
+    padding: 11px 14px;
+    margin: 6px 0;
+    border: 1px solid var(--rule);
+    cursor: pointer;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13.5px;
+    line-height: 1.45;
+    color: var(--ink);
+    transition: all 0.15s;
+    user-select: none;
+  }
+  .option:hover { border-color: var(--accent); background: var(--accent-soft); }
+  .option.correct {
+    border-color: var(--ok);
+    background: #6b8e3f25;
+    color: #b8d189;
+  }
+  .option.incorrect {
+    border-color: var(--danger);
+    background: #c4533a20;
+    color: #e8a394;
+  }
+  .option .letter {
+    display: inline-block;
+    width: 24px;
+    color: var(--accent);
+    font-weight: 700;
+    vertical-align: top;
+  }
+  .option .otext { display: inline-block; width: calc(100% - 28px); vertical-align: top; }
+  .explain {
+    margin-top: 14px;
+    padding: 12px 16px;
+    background: var(--bg);
+    border-left: 2px solid var(--accent);
+    font-style: italic;
+    font-size: 15px;
+    color: var(--ink-dim);
+    display: none;
+  }
+  .explain.show { display: block; }
+  .explain strong { font-style: normal; color: var(--accent); }
+
+  .reset-btn {
+    display: block;
+    width: 100%;
+    background: transparent;
+    color: var(--ink-dim);
+    border: 1px solid var(--rule);
+    padding: 14px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-top: 24px;
+    transition: all 0.2s;
+  }
+  .reset-btn:hover { border-color: var(--accent); color: var(--accent); }
+
   footer {
-    margin-top: 80px;
+    margin-top: 60px;
     padding-top: 24px;
     border-top: 1px solid var(--rule);
     font-family: 'JetBrains Mono', monospace;
@@ -367,8 +223,6 @@
   }
 
   @media (max-width: 600px) {
-    .toc ol { columns: 1; }
-    dl.kv > div { grid-template-columns: 1fr; gap: 4px; }
     .wrap { padding: 24px 18px 60px; }
   }
 </style>
@@ -377,549 +231,19 @@
 <div class="wrap">
 
 <header class="header">
-  <div class="eyebrow">Final Exam Briefing · PSOTP Confirmation</div>
-  <h1>FPS PSO<br><span class="accent">Theory Exam</span> Study Guide</h1>
-  <p class="subtitle">Federal Protective Service · Protective Security Officer Training Program. Everything covered in the federal PSOTP curriculum — jurisdiction, conduct rules, use of force, post duties, emergency response. Pass this and you're confirmed for post.</p>
+  <div class="eyebrow">Practice Exam #2 · Advanced</div>
+  <h1>FPS PSO <span class="accent">Hard Mode</span><br>Practice Test</h1>
+  <p class="subtitle">30 tougher questions — heavy on scenarios, edge cases, and "two answers look right, pick the best one." If you can clear this one, the real exam will feel easy.</p>
 </header>
 
-<div class="facts">
-  <div class="fact"><div class="fact-label">Program</div><div class="fact-value">PSOTP <span class="small">DHS/FPS</span></div></div>
-  <div class="fact"><div class="fact-label">Pass Score</div><div class="fact-value">≥80% <span class="small">typical</span></div></div>
-  <div class="fact"><div class="fact-label">Authority</div><div class="fact-value">40 USC <span class="small">§ 1315</span></div></div>
-  <div class="fact"><div class="fact-label">Conduct Rules</div><div class="fact-value">41 CFR <span class="small">102-74</span></div></div>
-</div>
-
-<nav class="toc">
-  <div class="toc-title">Topics Covered</div>
-  <ol>
-    <li><a href="#s1">FPS Mission & PSO Role</a></li>
-    <li><a href="#s2">PSO Authority — and Its Limits</a></li>
-    <li><a href="#s3">Three Types of Jurisdiction</a></li>
-    <li><a href="#s4">41 CFR 102-74: Conduct Rules</a></li>
-    <li><a href="#s5">Federal Crimes & 18 USC § 111</a></li>
-    <li><a href="#s6">Use of Force Doctrine</a></li>
-    <li><a href="#s7">Detention vs. Arrest</a></li>
-    <li><a href="#s8">Administrative Search & Screening</a></li>
-    <li><a href="#s9">Post Orders & SOPs</a></li>
-    <li><a href="#s10">FPS MegaCenter & Communication</a></li>
-    <li><a href="#s11">Report Writing</a></li>
-    <li><a href="#s12">Emergency Response</a></li>
-    <li><a href="#s13">Active Threats & WMD/CBRNE</a></li>
-    <li><a href="#s14">Crime Scene Preservation</a></li>
-    <li><a href="#s15">Conduct, Ethics & Appearance</a></li>
-    <li><a href="#quiz">Practice Exam (30 Questions)</a></li>
-  </ol>
-</nav>
-
-<!-- 1 -->
-<section id="s1">
-  <h2><span class="num">01</span>FPS Mission & The PSO Role</h2>
-
-  <p>The <strong>Federal Protective Service (FPS)</strong> is a federal law enforcement agency under the <strong>Department of Homeland Security (DHS)</strong>. Its mission is to protect federal facilities, the people who work in and visit them, and the property within them.</p>
-
-  <p>FPS itself employs about 900 sworn federal law enforcement officers. To cover the roughly 9,000+ federal facilities it's responsible for, FPS contracts with private security firms — like Kerberos — who employ approximately 13,000 <strong>Protective Security Officers (PSOs)</strong> nationwide.</p>
-
-  <h3>What a PSO IS</h3>
+<div class="brief">
+  <strong>Before you start:</strong> This test is deliberately harder than the real PSOTP exam.
   <ul>
-    <li>A trained private security professional working under a federal contract.</li>
-    <li>The visible, front-line security presence at a federal facility.</li>
-    <li>The "eyes and ears" of FPS — responsible for observing, reporting, and responding to incidents per post orders.</li>
-    <li>Authorized to perform access control, screening, patrol, and emergency response on the assigned facility.</li>
+    <li>Many questions are scenario-based — read every word, the details matter.</li>
+    <li>Several have two plausible answers; the correct one is the <em>most</em> complete or <em>most</em> correct.</li>
+    <li>Watch for absolute words ("always," "never," "only") — they're often (not always) wrong.</li>
+    <li>Don't guess and move on — read the explanation even when you get it right.</li>
   </ul>
-
-  <h3>What a PSO IS NOT</h3>
-  <ul>
-    <li><strong>NOT a federal law enforcement officer.</strong> PSOs do not derive arrest authority from <code>40 USC § 1315</code> — that statute grants LE authority to sworn FPS officers and agents, not contract PSOs.</li>
-    <li><strong>NOT a sworn peace officer.</strong> Your authority to detain is the same as any private citizen, supplemented by state law and your post orders.</li>
-    <li>Impersonating a federal officer can result in criminal charges under <code>18 USC § 912</code>. Identify yourself as a PSO. Never claim to be a federal agent, marshal, or police officer.</li>
-  </ul>
-
-  <div class="callout">
-    <strong>Core test concept:</strong> The PSO's role is "Observe and Report." You deter through presence, detect threats early, delay intruders, and respond per post orders — but you summon FPS or local law enforcement to investigate and arrest.
-  </div>
-</section>
-
-<!-- 2 -->
-<section id="s2">
-  <h2><span class="num">02</span>PSO Authority — and Its Limits</h2>
-
-  <p>This is one of the most heavily tested topics on the PSOTP exam. Get clear on the difference between FPS sworn authority and PSO contract authority.</p>
-
-  <h3>40 USC § 1315 — FPS Officer Authority (NOT PSOs)</h3>
-  <p>This statute grants sworn FPS officers and agents the power to:</p>
-  <ul>
-    <li>Enforce federal laws and regulations protecting persons and property.</li>
-    <li>Carry firearms.</li>
-    <li>Make arrests without a warrant for any offense against the United States committed in their presence, or for any felony with reasonable grounds.</li>
-    <li>Serve warrants and subpoenas.</li>
-    <li>Conduct investigations.</li>
-  </ul>
-
-  <div class="callout warning">
-    <strong>Critical exam point:</strong> A contract PSO is <strong>NOT</strong> one of the "officers or agents" designated under 40 USC § 1315. Your authority to detain comes from <strong>state law</strong> (citizen's arrest, shopkeeper's privilege, defense of property), supplemented by the property owner's authority delegated through your post orders.
-  </div>
-
-  <h3>What a PSO Can Do</h3>
-  <ul>
-    <li>Control access to the facility per post orders.</li>
-    <li>Conduct administrative searches at screening checkpoints (bags, magnetometer).</li>
-    <li>Deny entry to anyone refusing screening or violating facility rules.</li>
-    <li>Temporarily detain a person for safety reasons, or for a crime committed in your presence, until law enforcement arrives.</li>
-    <li>Use reasonable force to defend self, others, or — in limited cases — property.</li>
-    <li>Direct people to leave federal property when their presence violates 41 CFR or post orders.</li>
-  </ul>
-
-  <h3>What a PSO Cannot Do</h3>
-  <ul>
-    <li>Make arrests in the same sense a sworn officer does (no booking, no fingerprinting, no transport to jail).</li>
-    <li>Initiate vehicle pursuits off the property.</li>
-    <li>Conduct criminal investigations.</li>
-    <li>Serve warrants or subpoenas.</li>
-    <li>Use deadly force to stop fleeing suspects who don't pose a deadly threat.</li>
-    <li>Use force to enforce traffic laws or routine ordinance violations.</li>
-  </ul>
-</section>
-
-<!-- 3 -->
-<section id="s3">
-  <h2><span class="num">03</span>Three Types of Federal Jurisdiction</h2>
-
-  <p>The jurisdictional status of your assigned facility determines which agency has primary law enforcement authority. <strong>You must know which type applies to your post.</strong> It's in your post orders.</p>
-
-  <div class="stat-grid">
-    <div class="stat">
-      <div class="stat-name">Exclusive</div>
-      <div class="stat-desc">The federal government has sole authority. State and local police have no general police powers inside the facility's footprint. Federal LE handles all crimes.</div>
-    </div>
-    <div class="stat">
-      <div class="stat-name">Concurrent</div>
-      <div class="stat-desc">Federal and state/local authorities share jurisdiction equally. Either may enforce criminal laws. Most common type at modern federal buildings.</div>
-    </div>
-    <div class="stat">
-      <div class="stat-name">Proprietary</div>
-      <div class="stat-desc">The federal government has property rights only (it's a tenant or owner) but the state retains all law enforcement authority. Local police handle crimes.</div>
-    </div>
-  </div>
-
-  <h3>How to Tell Which You're On</h3>
-  <ul>
-    <li><strong>Check your post orders.</strong> The jurisdictional status is stated as part of the facility's contract documents.</li>
-    <li>Pre-1940 federal land acquisitions often default to <strong>Exclusive</strong> jurisdiction unless ceded back. After the Buck Act and related legislation, the federal government must affirmatively accept jurisdiction.</li>
-    <li>Leased space in a private commercial building is almost always <strong>Proprietary</strong>.</li>
-    <li>Many large federal complexes (courthouses, agency HQs) are <strong>Concurrent</strong>.</li>
-  </ul>
-
-  <h3>Why It Matters</h3>
-  <p>If a felony occurs in front of you, your call differs based on jurisdiction:</p>
-  <ul>
-    <li><strong>Exclusive:</strong> Notify FPS MegaCenter and FPS responds. Local police generally cannot enter to act.</li>
-    <li><strong>Concurrent:</strong> Notify FPS first; either FPS or local can respond.</li>
-    <li><strong>Proprietary:</strong> Local police handle it. Notify FPS for situational awareness.</li>
-  </ul>
-
-  <div class="callout">
-    <strong>Default rule for the exam:</strong> When in doubt, notify the <strong>FPS MegaCenter</strong>. They route the response to the appropriate agency.
-  </div>
-</section>
-
-<!-- 4 -->
-<section id="s4">
-  <h2><span class="num">04</span>41 CFR Part 102-74 — Conduct on Federal Property</h2>
-
-  <p>This is the federal regulation that governs what people may and may not do inside federal buildings. The PSO enforces these rules. Know the major categories.</p>
-
-  <h3>Prohibited Items</h3>
-  <ul>
-    <li>Firearms and other dangerous weapons (except for authorized law enforcement and military personnel).</li>
-    <li>Explosives or items intended for use as explosives or incendiaries.</li>
-    <li>Controlled substances — including marijuana, which remains illegal under federal law <strong>regardless of state medical or recreational laws</strong>.</li>
-  </ul>
-
-  <h3>Prohibited Conduct</h3>
-  <ul>
-    <li><strong>Disturbances</strong> — loitering, disorderly conduct, creating a nuisance, or disrupting official business.</li>
-    <li><strong>Gambling</strong> — except specifically authorized blind-vendor lotteries.</li>
-    <li><strong>Alcoholic beverages</strong> — unless authorized for official events.</li>
-    <li><strong>Smoking</strong> — except where explicitly permitted by agency regulations (most interiors prohibit it).</li>
-    <li><strong>Unauthorized soliciting, vending, debt collection, or commercial advertising.</strong></li>
-    <li><strong>Unauthorized posting or distributing of materials</strong> on walls, bulletin boards, or other surfaces.</li>
-    <li><strong>Photography</strong> for news, advertising, or commercial purposes inside the building requires authorization — though news media may photograph in entrance lobbies and at public press events under standard rules.</li>
-    <li><strong>Animals</strong> — only service animals assisting persons with disabilities, and official working K9s, are allowed. Personal pets are not.</li>
-  </ul>
-
-  <h3>Authorized Conduct</h3>
-  <ul>
-    <li><strong>Inspection of packages and bags</strong> entering federal property — this is established by regulation and by signage. Refusal to consent means denied entry, not arrest.</li>
-    <li><strong>Peaceful First Amendment activity on exterior sidewalks and plazas</strong> — provided it does not block ingress/egress or disrupt building operations.</li>
-    <li><strong>Breastfeeding</strong> is explicitly protected by federal law on federal property in any location where the woman and child are otherwise authorized to be (<code>Public Law 110-181, § 629</code>).</li>
-  </ul>
-</section>
-
-<!-- 5 -->
-<section id="s5">
-  <h2><span class="num">05</span>Federal Crimes Against PSOs & Employees</h2>
-
-  <h3>18 USC § 111 — Assault on a Federal Officer or Employee</h3>
-  <p>This statute makes it a <strong>federal crime</strong> to forcibly assault, resist, oppose, impede, intimidate, or interfere with a federal officer or employee — or anyone assisting them — while engaged in their official duties. Penalty tiers:</p>
-  <dl class="kv">
-    <div><dt>Simple Assault</dt><dd>No contact, threats, or intimidation — up to 1 year in federal prison.</dd></div>
-    <div><dt>Contact / Felony Intent</dt><dd>Physical contact or assault with intent to commit another felony — up to 8 years.</dd></div>
-    <div><dt>Deadly Weapon / Injury</dt><dd>Use of a deadly weapon or infliction of bodily injury — up to 20 years.</dd></div>
-  </dl>
-
-  <h3>18 USC § 1114 — Who Is Protected</h3>
-  <p>This section defines who is covered under § 111 protections: <em>any officer or employee of the United States or any federal agency, including uniformed services, OR any person assisting such an officer or employee in the performance of their official duties.</em></p>
-
-  <div class="callout">
-    <strong>Key takeaway for PSOs:</strong> When you're on duty performing your contracted security functions, you are <strong>"a person assisting" federal officers and employees</strong> in the protection of federal property. An assault on you while you're on post can be prosecuted federally under § 111.
-  </div>
-
-  <h3>Common Federal Crimes on FPS Property</h3>
-  <ul>
-    <li><strong>Theft of government property</strong> — <code>18 USC § 641</code>.</li>
-    <li><strong>Destruction of government property</strong> — <code>18 USC § 1361</code>.</li>
-    <li><strong>Trespass on federal property</strong> — typically charged via 41 CFR violation citation.</li>
-    <li><strong>Impersonating a federal officer</strong> — <code>18 USC § 912</code>. (Yes, this applies if a PSO falsely claims federal LE status.)</li>
-    <li><strong>Threats against federal officials</strong> — various statutes.</li>
-  </ul>
-</section>
-
-<!-- 6 -->
-<section id="s6">
-  <h2><span class="num">06</span>Use of Force Doctrine</h2>
-
-  <h3>The Legal Standard: Graham v. Connor (1989)</h3>
-  <p>The Supreme Court established that use of force is evaluated under the <strong>"objective reasonableness"</strong> standard — judged from the perspective of a reasonable officer on the scene at the moment force was used, not in 20/20 hindsight. Factors considered:</p>
-  <ul>
-    <li>The severity of the crime or threat.</li>
-    <li>Whether the subject poses an immediate threat to officers or others.</li>
-    <li>Whether the subject is actively resisting or attempting to evade.</li>
-  </ul>
-
-  <h3>Use of Force Continuum</h3>
-  <ol>
-    <li><strong>Officer Presence</strong> — visible uniformed deterrence.</li>
-    <li><strong>Verbal Direction</strong> — clear, calm, lawful commands.</li>
-    <li><strong>Empty-Hand Control</strong> — escorts, holds, restraint techniques.</li>
-    <li><strong>Less-Lethal Options</strong> — OC spray, baton (where issued and trained).</li>
-    <li><strong>Deadly Force</strong> — firearm. Reserved for imminent threat of death or serious bodily injury.</li>
-  </ol>
-
-  <h3>Deadly Force Justification — Three Elements</h3>
-  <div class="callout">
-    <strong>All three must be present:</strong>
-    <ol style="margin-top:8px;">
-      <li><strong>Ability</strong> — the subject has the capability to cause death or serious physical injury.</li>
-      <li><strong>Opportunity</strong> — the subject is positioned to use that ability right now.</li>
-      <li><strong>Jeopardy</strong> — the subject's actions indicate intent to act on it.</li>
-    </ol>
-  </div>
-
-  <h3>Force Must Be</h3>
-  <ul>
-    <li><strong>Reasonable</strong> under the circumstances known at the time.</li>
-    <li><strong>Necessary</strong> — no lesser option would have worked.</li>
-    <li><strong>Proportional</strong> to the threat.</li>
-    <li><strong>Stopped</strong> the moment the threat is neutralized or compliance is achieved.</li>
-  </ul>
-
-  <div class="callout warning">
-    <strong>Never use deadly force to:</strong> protect property alone, stop a fleeing suspect who poses no deadly threat, or as punishment. Warning shots are prohibited.
-  </div>
-</section>
-
-<!-- 7 -->
-<section id="s7">
-  <h2><span class="num">07</span>Detention vs. Arrest</h2>
-
-  <dl class="kv">
-    <div><dt>Detention</dt><dd>A brief, temporary hold of a person based on reasonable suspicion of misconduct, to maintain safety or wait for law enforcement. Limited in scope and duration. PSOs do this regularly.</dd></div>
-    <div><dt>Arrest</dt><dd>Taking a person into custody with the intent to deliver them to the criminal justice system. PSOs do not perform arrests in the same sense as sworn officers; what they do is sometimes called a "citizen's arrest" and is legally a detention until LE arrives.</dd></div>
-  </dl>
-
-  <h3>If You Detain Someone</h3>
-  <ol>
-    <li>Use only the force necessary to safely effect the detention.</li>
-    <li>Notify the FPS MegaCenter and request law enforcement response.</li>
-    <li>Inform the person why they are being detained.</li>
-    <li>Hold them only as long as reasonably necessary for LE to arrive.</li>
-    <li>Document everything — time, location, observations, witnesses, statements.</li>
-    <li>Transfer custody to responding officers as soon as they arrive.</li>
-  </ol>
-
-  <h3>Civil Liability Risks</h3>
-  <p>If you detain someone wrongly — wrong person, no actual offense, excessive force, prolonged detention — you and your employer can face:</p>
-  <ul>
-    <li><strong>False imprisonment</strong> claims.</li>
-    <li><strong>Battery or assault</strong> claims.</li>
-    <li><strong>Civil rights violations</strong> (especially if you were acting at LE direction).</li>
-    <li><strong>Negligence</strong> claims.</li>
-  </ul>
-  <p>The Fourth Amendment generally restricts <em>government</em> searches. As a contract PSO performing security functions on federal property, your screening searches are <strong>administrative</strong> — based on implied consent (you can't enter without consenting to screening). But if you act at the direction of law enforcement, you become a "state actor" and Fourth Amendment protections kick in.</p>
-</section>
-
-<!-- 8 -->
-<section id="s8">
-  <h2><span class="num">08</span>Administrative Search & Screening</h2>
-
-  <h3>The Legal Basis</h3>
-  <p>Screening at federal facilities is an <strong>administrative search</strong>. Entry is conditioned on consent to screening. A person who refuses screening is denied entry — they are not arrested for the refusal itself.</p>
-
-  <h3>Walk-Through Magnetometer (Metal Detector)</h3>
-  <ul>
-    <li>Detects concealed metallic objects.</li>
-    <li>If an alarm sounds: ask the person to remove and divest pocket items, then have them step back through. If it alarms again, use a hand-held wand for targeted screening.</li>
-    <li>Repeated alarms or refusal to cooperate = denied entry.</li>
-  </ul>
-
-  <h3>X-Ray (Bag Screener)</h3>
-  <ul>
-    <li>Used to screen carried items for prohibited contents.</li>
-    <li>If a suspected explosive or IED appears on the monitor: <strong>stop the belt immediately, do not touch the bag</strong>, isolate the area, evacuate as appropriate, notify the MegaCenter, and request response.</li>
-    <li>Never run a suspected device through again "to be sure."</li>
-  </ul>
-
-  <h3>Common Prohibited Items Found in Screening</h3>
-  <ul>
-    <li>Firearms (unless properly credentialed).</li>
-    <li>Knives over allowable length, fixed-blade knives.</li>
-    <li>Pepper spray, mace, stun guns, tasers.</li>
-    <li>Multi-tools with locking blades.</li>
-    <li>Tools that could be used as weapons (hammers, large screwdrivers).</li>
-    <li>Marijuana and other controlled substances.</li>
-  </ul>
-</section>
-
-<!-- 9 -->
-<section id="s9">
-  <h2><span class="num">09</span>Post Orders & Standard Operating Procedures</h2>
-
-  <p><strong>Post orders are your operational bible.</strong> They are written, contract-mandated documents that specify exactly what your duties are at a given post.</p>
-
-  <h3>Typical Post Order Contents</h3>
-  <ul>
-    <li>Facility jurisdiction type and key tenant agencies.</li>
-    <li>Specific patrol routes and timing.</li>
-    <li>Access control procedures — who can enter, what credentials, what screening.</li>
-    <li>Emergency response procedures — fire, bomb threat, medical, active shooter.</li>
-    <li>Specific prohibitions and restricted areas.</li>
-    <li>Reporting requirements and chain of notification.</li>
-    <li>Contact numbers — FPS MegaCenter, building manager, local police.</li>
-    <li>Required equipment and uniform standards.</li>
-  </ul>
-
-  <h3>Rules for Post Orders</h3>
-  <ul>
-    <li><strong>Read them at the start of every shift.</strong> They change. Updates are issued.</li>
-    <li><strong>Follow them precisely.</strong> Deviation is grounds for removal from contract.</li>
-    <li>If a post order seems to conflict with law, training, or safety — notify your supervisor and the MegaCenter; <strong>do not</strong> ignore it unilaterally.</li>
-    <li>Post orders are facility-specific. What's authorized at one post may be prohibited at another.</li>
-  </ul>
-</section>
-
-<!-- 10 -->
-<section id="s10">
-  <h2><span class="num">10</span>FPS MegaCenter & Communication</h2>
-
-  <p>The <strong>FPS MegaCenter</strong> is the 24/7/365 communications and dispatch center that supports all FPS operations and contract PSOs. There are MegaCenters in different regions; calls route based on your area code.</p>
-
-  <div class="stat-grid">
-    <div class="stat">
-      <div class="stat-name">National Number</div>
-      <div class="stat-desc"><code style="font-size: 16px;">1-877-437-7411</code></div>
-    </div>
-    <div class="stat">
-      <div class="stat-name">Hours</div>
-      <div class="stat-desc">24 hours / 7 days / 365 days</div>
-    </div>
-    <div class="stat">
-      <div class="stat-name">Function</div>
-      <div class="stat-desc">Dispatch, incident logging, LE coordination, status checks</div>
-    </div>
-  </div>
-
-  <h3>When You Call the MegaCenter</h3>
-  <ul>
-    <li>Identify yourself: name, employer (Kerberos), post location.</li>
-    <li>State the nature of the call: emergency vs. routine, type of incident.</li>
-    <li>Describe location precisely — building, floor, room, entrance.</li>
-    <li>Describe persons involved using standard format (sex, race, height, clothing, etc.).</li>
-    <li>Stay on the line until the dispatcher releases you.</li>
-  </ul>
-
-  <h3>Radio Discipline</h3>
-  <ul>
-    <li>Use plain language. Avoid codes unless the post orders specify them.</li>
-    <li>Press the talk button, pause briefly, then speak. Otherwise the first word gets cut off.</li>
-    <li>Speak slowly and clearly. Spell unusual names phonetically (Alpha, Bravo, Charlie…).</li>
-    <li>Never broadcast sensitive information (suspect's full Social Security number, etc.).</li>
-    <li>Acknowledge transmissions: "Copy," "10-4," "Received."</li>
-  </ul>
-</section>
-
-<!-- 11 -->
-<section id="s11">
-  <h2><span class="num">11</span>Report Writing</h2>
-  <p>Every significant incident, breach, medical event, or use of force gets documented in an incident report. These reports become legal evidence — sometimes years later. Write them like they'll be read in court, because they might be.</p>
-
-  <h3>The Six W's</h3>
-  <ul>
-    <li><strong>Who</strong> — all persons involved (names, DOB, addresses, descriptions).</li>
-    <li><strong>What</strong> — what happened, in chronological order.</li>
-    <li><strong>When</strong> — date and 24-hour time.</li>
-    <li><strong>Where</strong> — exact location.</li>
-    <li><strong>Why</strong> — observed motive or cause (if any).</li>
-    <li><strong>How</strong> — method, sequence, tools/weapons used.</li>
-  </ul>
-
-  <h3>Report Writing Rules</h3>
-  <ul>
-    <li><strong>Facts, not opinions.</strong> Don't write "the man was angry." Write "the man was shouting, his face was red, and his fists were clenched."</li>
-    <li><strong>First person, past tense, active voice.</strong> "I observed…" not "It was observed that…"</li>
-    <li><strong>Use direct quotes</strong> for statements: He stated, "I'll be back."</li>
-    <li><strong>No slang, no jargon</strong> the reader might not understand.</li>
-    <li><strong>Never alter a submitted report</strong> — add a supplemental report instead.</li>
-    <li><strong>Sign and date</strong> the report. Note witnesses who were present.</li>
-  </ul>
-</section>
-
-<!-- 12 -->
-<section id="s12">
-  <h2><span class="num">12</span>Emergency Response</h2>
-
-  <h3>Fire — RACE</h3>
-  <ul>
-    <li><strong>R</strong>escue anyone in immediate danger.</li>
-    <li><strong>A</strong>larm — pull the alarm, call 911, notify the MegaCenter.</li>
-    <li><strong>C</strong>ontain — close doors to limit spread.</li>
-    <li><strong>E</strong>xtinguish (only if small, contained, and you're trained) or Evacuate.</li>
-  </ul>
-
-  <h3>Fire Extinguisher — PASS</h3>
-  <ul>
-    <li><strong>P</strong>ull the pin.</li>
-    <li><strong>A</strong>im at the base of the fire.</li>
-    <li><strong>S</strong>queeze the handle.</li>
-    <li><strong>S</strong>weep side to side.</li>
-  </ul>
-
-  <h3>Medical Emergency</h3>
-  <ul>
-    <li>Call 911 first, then notify MegaCenter.</li>
-    <li>Render aid within your training (CPR, AED, bleeding control, Stop the Bleed).</li>
-    <li>Use universal precautions — assume all bodily fluids are infectious. Gloves and barriers.</li>
-    <li>Stay with the victim until EMS arrives. Document what you observed and what aid you rendered.</li>
-  </ul>
-
-  <h3>Bomb Threat (Phone Call)</h3>
-  <ul>
-    <li>Keep the caller on the line as long as possible. Listen for accent, background noise, voice characteristics.</li>
-    <li>Ask: <em>When will it go off? Where is it? What does it look like? Why? Who are you?</em></li>
-    <li>Do not hang up. Signal a co-worker to notify supervisor and the MegaCenter.</li>
-    <li>If a device is identified or suspected: <strong>do not touch it, do not move it, do not use radios near it</strong> (RF can detonate some triggers). Evacuate per post orders.</li>
-  </ul>
-
-  <h3>Evacuation</h3>
-  <ul>
-    <li>Direct occupants to nearest safe exits per the building's emergency plan.</li>
-    <li>Account for persons with disabilities — assist or designate assistance.</li>
-    <li>Establish perimeter at assembly point. Keep evacuees clear of the building.</li>
-    <li>Provide situational reports to MegaCenter and responding agencies.</li>
-  </ul>
-</section>
-
-<!-- 13 -->
-<section id="s13">
-  <h2><span class="num">13</span>Active Threats & WMD/CBRNE</h2>
-
-  <h3>Active Shooter Response</h3>
-  <p>Federal guidance is <strong>RUN · HIDE · FIGHT</strong> in that order — but as an <strong>armed</strong> PSO, your specific response is dictated by your post orders and FPS protocol. The DHS guidance is the baseline framework:</p>
-  <ul>
-    <li><strong>Run</strong> — evacuate if a safe path exists. Leave belongings. Help others escape if possible.</li>
-    <li><strong>Hide</strong> — out of sight, lock and barricade doors, silence phones.</li>
-    <li><strong>Fight</strong> — as a last resort, with total commitment.</li>
-  </ul>
-  <p>As an armed PSO at an FPS post, your protocol may direct you to address the threat to protect life. <strong>Know your post-specific active threat protocol cold.</strong> It is in your post orders.</p>
-
-  <h3>CBRNE Awareness</h3>
-  <dl class="kv">
-    <div><dt>Chemical</dt><dd>Unusual odors (almonds, garlic, bleach), dead vegetation or animals, casualties with similar symptoms in the same area. Get upwind and uphill.</dd></div>
-    <div><dt>Biological</dt><dd>Usually invisible. First sign is often an unexplained cluster of illness. Isolate suspicious substances (powders, liquids).</dd></div>
-    <div><dt>Radiological</dt><dd>"Dirty bomb" — conventional explosive disperses radioactive material. Distance, time, and shielding are your defenses.</dd></div>
-    <div><dt>Nuclear</dt><dd>Full nuclear device. Maximum distance, take cover from initial flash, shelter in place against fallout afterward.</dd></div>
-    <div><dt>Explosive</dt><dd>Most common CBRNE incident. See bomb threat procedures.</dd></div>
-  </dl>
-
-  <h3>Suspicious Package / Mail Indicators</h3>
-  <ul>
-    <li>Excessive postage or hand-stamped postage.</li>
-    <li>No return address or unfamiliar return address.</li>
-    <li>Misspelled words, poor handwriting.</li>
-    <li>Oily stains, discoloration, protruding wires or strings.</li>
-    <li>Restrictive markings: "Personal," "Confidential," "Do Not X-Ray."</li>
-    <li>Lopsided, uneven, or unusual weight for size.</li>
-    <li>Strange odors.</li>
-  </ul>
-  <p><strong>If suspicious:</strong> Do not move it. Do not open it. Do not put it in water. Isolate the area, evacuate as needed, notify supervisor and the MegaCenter. Do not use radios within close proximity.</p>
-</section>
-
-<!-- 14 -->
-<section id="s14">
-  <h2><span class="num">14</span>Crime Scene Preservation</h2>
-
-  <p>When a crime has occurred on your post, your job is to <strong>preserve</strong> the scene for the responding investigators, not to investigate it yourself.</p>
-
-  <h3>Five Steps</h3>
-  <ol>
-    <li><strong>Secure the scene.</strong> Establish a perimeter. Keep everyone out — including curious employees and supervisors.</li>
-    <li><strong>Protect evidence.</strong> Don't touch, move, or alter anything unless absolutely necessary for safety (e.g., turning off running water).</li>
-    <li><strong>Identify and separate witnesses.</strong> Get names and contact info. Keep witnesses apart so they don't influence each other's accounts.</li>
-    <li><strong>Note your observations.</strong> Time of arrival, what you saw, who was present, who entered the scene, what changes occurred.</li>
-    <li><strong>Brief the responding investigators.</strong> Hand off custody of the scene and provide your initial observations.</li>
-  </ol>
-
-  <div class="callout warning">
-    <strong>Do NOT:</strong> Move bodies (unless absolutely needed for medical aid). Move weapons. Pick up shell casings. Clean up. Take photos for personal use. Discuss the scene on social media. Allow unauthorized personnel into the scene.
-  </div>
-</section>
-
-<!-- 15 -->
-<section id="s15">
-  <h2><span class="num">15</span>Conduct, Ethics & Appearance</h2>
-
-  <h3>On-Duty Conduct</h3>
-  <ul>
-    <li><strong>Honesty in all reports and statements.</strong> A single falsified report ends your career and may bring criminal charges.</li>
-    <li><strong>No alcohol or impairing substances</strong> on duty or within 8 hours before a shift. Subject to random drug testing.</li>
-    <li><strong>No sleeping on post.</strong> Documented and photographed in the past — instant removal.</li>
-    <li><strong>No abandoning post</strong> without authorization and relief.</li>
-    <li><strong>Carry your DPSST license and any FPS-issued credentials</strong> at all times. Present to law enforcement on request.</li>
-    <li><strong>Discretion</strong> — never disclose post information, security procedures, schedules, or tenant information to unauthorized persons or on social media.</li>
-  </ul>
-
-  <h3>Uniform & Appearance</h3>
-  <ul>
-    <li>Uniform clean, pressed, and complete per contract specifications.</li>
-    <li>Footwear: black, plain, closed-toed, with black laces. Heels under 1 inch. No athletic shoes, sandals, suede, or decorative styling.</li>
-    <li>Outerwear must be FPS-approved.</li>
-    <li>Metal breast badge on left side when shirt is outermost garment.</li>
-    <li>Hair, grooming, and personal appearance per contract standards.</li>
-  </ul>
-
-  <h3>Interacting with the Public</h3>
-  <ul>
-    <li>Treat every person professionally regardless of their behavior toward you.</li>
-    <li>Be friendly but firm. Especially with children — they may be curious about your gear; balance approachability with maintaining control of your equipment.</li>
-    <li>No sarcasm, profanity, or unprofessional language.</li>
-    <li>Sexual harassment of or by anyone is prohibited and reportable.</li>
-    <li>Be alert to your surroundings — vigilance is your best defense against assault.</li>
-  </ul>
-</section>
-
-<!-- QUIZ -->
-<div class="quiz-intro" id="quiz">
-  <h2><span class="num">QUIZ</span>Practice Exam</h2>
-  <p>30 questions mirroring the PSOTP final exam style. Click an answer to lock in and see the explanation.</p>
 </div>
 
 <div class="score-panel">
@@ -930,8 +254,10 @@
 
 <div id="quiz-container"></div>
 
+<button class="reset-btn" onclick="resetExam()">↺ Reset Exam</button>
+
 <footer>
-  END OF BRIEFING · CONFIRMED · POST-READY<br>
+  ADVANCED PRACTICE · EXAM #2 · STAY SHARP<br>
   Prepared by Dad · Portland, OR
 </footer>
 
@@ -940,319 +266,352 @@
 <script>
 const questions = [
   {
-    q: "From what federal statute do sworn FPS law enforcement officers derive their authority?",
-    options: ["40 USC § 1315", "18 USC § 111", "41 CFR Part 102-74", "Title 5 USC § 552"],
-    correct: 0,
-    explain: "40 USC § 1315 grants the Secretary of Homeland Security authority to designate FPS officers and agents to enforce federal laws on federal property. Important: this statute applies to sworn FPS personnel, NOT to contract PSOs."
-  },
-  {
-    q: "A contract PSO's authority to detain a person comes primarily from:",
+    tag: "JURISDICTION",
+    q: "You're posted at a federal facility under Concurrent jurisdiction. A visitor punches an employee in the lobby and is restrained by you. Local PD and FPS both arrive. Who may lawfully take custody and prosecute?",
     options: [
-      "40 USC § 1315 federal law enforcement authority",
-      "FBI deputization",
-      "State law (citizen's arrest, property defense) and the post orders for the facility",
-      "The PSO's personal concealed handgun license"
+      "Only FPS, because it's a federal building",
+      "Only local PD, because assault is a state crime",
+      "Either FPS or local authorities, because concurrent jurisdiction means both share enforcement authority",
+      "Neither — only a U.S. Marshal can act inside a federal building"
     ],
     correct: 2,
-    explain: "PSOs are private security employees, not federal officers. Their detention authority comes from state law (citizen's arrest statutes, shopkeeper's privilege, defense of property) supplemented by the property owner's authority delegated through post orders."
+    explain: "Concurrent jurisdiction means federal AND state/local authorities share criminal enforcement power. Either may take custody and the offense may be prosecuted in either system. This is exactly why knowing your facility's jurisdiction type matters — it changes who can act."
   },
   {
-    q: "Under Exclusive federal jurisdiction, who has authority to enforce criminal laws within the facility?",
+    tag: "AUTHORITY",
+    q: "A new PSO tells a detained subject, \"I'm a federal officer, you're under federal arrest.\" Which statement is most accurate?",
     options: [
-      "The federal government only",
-      "State and local police only",
-      "Federal and state authorities share equally",
-      "Private security has full police powers"
-    ],
-    correct: 0,
-    explain: "Exclusive jurisdiction means the federal government has sole authority. State and local police do not have general police powers inside the federal footprint. All crimes are handled by federal LE."
-  },
-  {
-    q: "The federal government leases office space inside a privately owned commercial building but holds no legislative authority over the land. What type of jurisdiction applies?",
-    options: ["Exclusive", "Concurrent", "Proprietary", "Sovereign"],
-    correct: 2,
-    explain: "Proprietary jurisdiction applies when the federal government has property rights only (owns or leases space) but the state retains all law enforcement authority. Local police handle crimes in this scenario."
-  },
-  {
-    q: "Concurrent jurisdiction means:",
-    options: [
-      "Only federal courts can hear cases",
-      "Federal and state/local authorities share enforcement authority",
-      "Only the military has authority",
-      "No agency has clear authority"
+      "Correct — PSOs on federal property are federal officers under 40 USC § 1315",
+      "Incorrect and potentially criminal — PSOs are not federal officers, and falsely claiming to be one can violate 18 USC § 912",
+      "Correct only if the facility is Exclusive jurisdiction",
+      "Incorrect, but harmless — it's just a figure of speech"
     ],
     correct: 1,
-    explain: "Concurrent jurisdiction means federal and state/local agencies share criminal law enforcement power. Either may respond to and prosecute crimes. Most modern federal buildings operate under concurrent jurisdiction."
+    explain: "PSOs are private security employees, NOT federal officers. 40 USC § 1315 authority belongs to sworn FPS personnel only. Falsely claiming to be a federal officer can be prosecuted under 18 USC § 912 (impersonation). Always identify as a PSO/security officer."
   },
   {
-    q: "How does a PSO determine the jurisdictional status of an assigned facility?",
+    tag: "USE OF FORCE",
+    q: "A subject is walking away from you toward the exit after shoplifting from a federal building gift shop. He is not armed and poses no threat to anyone. What level of force is justified to stop him?",
     options: [
-      "By asking employees who work there",
-      "By looking at flagpoles outside",
-      "By reading the facility's post orders and contract documents",
-      "By searching the local newspaper archives"
+      "Deadly force, because theft of government property is a federal felony",
+      "Whatever force is needed, since he's fleeing a crime scene",
+      "Only reasonable, proportional non-deadly options consistent with policy — deadly force is never justified to stop a non-dangerous fleeing suspect",
+      "A warning shot to make him stop"
     ],
     correct: 2,
-    explain: "Jurisdictional status is documented in the post orders and contract specifications for the facility. The PSO must read and know the post orders for each assigned post."
+    explain: "A fleeing, unarmed, non-dangerous suspect does not justify deadly force — Tennessee v. Garner and Graham v. Connor make this clear. Warning shots are prohibited. Force must be reasonable and proportional; here that means verbal commands, possibly empty-hand control per policy, and good observation/reporting for LE."
   },
   {
-    q: "Which Code of Federal Regulations section governs conduct on federal property?",
-    options: ["Title 21 CFR Part 1308", "Title 41 CFR Part 102-74", "Title 29 CFR Part 1910", "Title 49 CFR Part 172"],
-    correct: 1,
-    explain: "41 CFR Part 102-74 covers Facility Management — the rules of conduct for persons on federal property, including prohibited items, prohibited conduct, photography rules, animal rules, and so on."
-  },
-  {
-    q: "A person presents a valid state-issued medical marijuana card at the entrance of a federal facility. What is the correct PSO response?",
+    tag: "USE OF FORCE",
+    q: "Ability, Opportunity, and Jeopardy are all present — but the moment you draw, the subject drops the weapon, turns, and puts his hands up. What changes?",
     options: [
-      "Allow entry — state medical laws supersede federal",
-      "Deny entry or possession of marijuana, because it remains a controlled substance under federal law regardless of state law",
-      "Confiscate the card",
-      "Allow entry but only if a fee is paid"
+      "Nothing — once justified, you may fire",
+      "The Jeopardy and Opportunity elements have collapsed; deadly force is no longer justified and you must transition to commands/control",
+      "You should fire to be safe, then re-assess",
+      "You may fire only if a supervisor authorizes it over the radio"
     ],
     correct: 1,
-    explain: "Marijuana is a Schedule I controlled substance under federal law (Controlled Substances Act). State medical or recreational marijuana laws do not apply on federal property. The person must not bring marijuana onto the facility."
+    explain: "Use of force is evaluated at the moment force is used, continuously. When the subject disarms and surrenders, the immediate threat (Jeopardy/Opportunity) ends, so deadly force is no longer justified. Force must stop the instant the threat does. This is one of the most tested concepts."
   },
   {
-    q: "Under 41 CFR, which animals are generally permitted inside a federal building?",
+    tag: "41 CFR",
+    q: "A man sets up a folding table in the public lobby of a federal building and begins selling phone cases to employees. Under 41 CFR Part 102-74, this is:",
     options: [
-      "Any leashed domestic pet",
-      "Service animals trained to assist persons with disabilities, and official working K9s",
-      "Small exotic animals in carriers",
-      "No animals under any circumstances"
+      "Permitted — it's a public building",
+      "Prohibited unauthorized soliciting/vending; direct him to stop and leave; he may be cited or removed if he refuses",
+      "Permitted if he has a state business license",
+      "A federal felony requiring immediate detention"
     ],
     correct: 1,
-    explain: "Service animals (ADA-protected) and official working K9s are permitted. Emotional support animals and personal pets are generally not. Federal facilities follow ADA requirements for service animals."
+    explain: "Unauthorized soliciting, vending, and commercial advertising are prohibited under 41 CFR Part 102-74. The correct response is to inform him it's not allowed and direct him to cease and leave. It's a regulatory violation, not a felony — escalate to citation/removal only if he refuses."
   },
   {
-    q: "A peaceful demonstration is occurring on a public sidewalk outside the federal building. What is the PSO's primary responsibility?",
+    tag: "41 CFR",
+    q: "Which of these would a PSO most likely have to ALLOW under federal rules, not prohibit?",
     options: [
-      "Disperse the demonstration immediately",
-      "Monitor to ensure building ingress/egress remains unblocked and the building stays secure",
-      "Join the protest if it aligns with personal views",
-      "Confiscate cameras and signs"
-    ],
-    correct: 1,
-    explain: "Peaceful First Amendment activity on exterior public sidewalks is protected — provided it doesn't block ingress/egress or disrupt building operations. The PSO maintains facility security and ensures access remains clear."
-  },
-  {
-    q: "Under 41 CFR, photography by news media in lobby areas of federal buildings is:",
-    options: [
-      "Always prohibited without presidential authorization",
-      "Generally permitted, provided it doesn't disrupt building operations or violate active court rules",
-      "Only allowed during night hours",
-      "Allowed only if the PSO is paid"
-    ],
-    correct: 1,
-    explain: "News and public photography in lobbies and entrance areas is generally permitted under standard rules, subject to building operations, security needs, and any active court restrictions. Commercial photography typically requires authorization."
-  },
-  {
-    q: "What does 18 USC § 111 cover?",
-    options: [
-      "Drug trafficking on federal property",
-      "Forcibly assaulting, resisting, opposing, impeding, intimidating, or interfering with federal officers or persons assisting them",
-      "Tax fraud",
-      "Mail theft"
-    ],
-    correct: 1,
-    explain: "18 USC § 111 makes it a federal crime to forcibly assault, resist, oppose, impede, intimidate, or interfere with federal officers or employees — or anyone assisting them — in the performance of official duties. Penalties: up to 1 year (simple), 8 years (with contact), or 20 years (deadly weapon)."
-  },
-  {
-    q: "Under 18 USC § 1114, a contract PSO on duty assisting in the protection of federal property is:",
-    options: [
-      "Not protected by federal assault statutes",
-      "Covered as 'a person assisting' federal officers or employees in their duties, and thus protected under 18 USC § 111",
-      "Only protected on weekends",
-      "Required to file a separate protection request"
-    ],
-    correct: 1,
-    explain: "18 USC § 1114 defines who is protected under § 111. It includes federal officers, employees, AND 'any person assisting' them in their official duties. A PSO performing contracted security functions at a federal facility falls into this category."
-  },
-  {
-    q: "Under what legal standard is a PSO's use of force evaluated?",
-    options: [
-      "Absolute certainty",
-      "Subjective emotional response of the PSO",
-      "Objective reasonableness from the perspective of a reasonable officer on the scene at the moment force was used (Graham v. Connor)",
-      "20/20 hindsight after all facts are known"
-    ],
-    correct: 2,
-    explain: "Graham v. Connor (1989) established the 'objective reasonableness' standard. Force is judged from the perspective of a reasonable officer on the scene at the moment force was used, considering the information then available — not in hindsight with full knowledge."
-  },
-  {
-    q: "All three of which elements must be present to justify deadly force?",
-    options: [
-      "Authority, Order, Compliance",
-      "Ability, Opportunity, Jeopardy",
-      "Suspicion, Pursuit, Capture",
-      "Detect, Deter, Defend"
-    ],
-    correct: 1,
-    explain: "Ability (can cause death or serious injury), Opportunity (positioned to act now), and Jeopardy (acting in a way that indicates intent). All three must be present. Remove any one and deadly force is not justified."
-  },
-  {
-    q: "Warning shots are:",
-    options: [
-      "Authorized when verbal commands fail",
-      "Authorized at the PSO's discretion",
-      "Authorized into a safe backstop only",
-      "Prohibited"
-    ],
-    correct: 3,
-    explain: "Warning shots are prohibited. Every round fired must be aimed at an identified deadly threat. Bullets fired 'into the air' come down somewhere; bullets fired 'at the ground' can ricochet unpredictably."
-  },
-  {
-    q: "A PSO may NEVER use deadly force to:",
-    options: [
-      "Defend self against an imminent deadly threat",
-      "Defend another person against an imminent deadly threat",
-      "Prevent low-level property damage with no threat to persons",
-      "Stop someone actively trying to kill them"
-    ],
-    correct: 2,
-    explain: "Deadly force may never be used to protect property alone, to stop a fleeing suspect who poses no deadly threat, or to enforce ordinances. It is reserved for imminent threat of death or serious physical injury to persons."
-  },
-  {
-    q: "The Fourth Amendment generally protects against:",
-    options: [
-      "Unreasonable searches and seizures",
-      "Self-incrimination",
-      "Cruel and unusual punishment",
-      "Quartering of soldiers"
+      "A protester distributing leaflets on the exterior public sidewalk without blocking the entrance",
+      "A vendor selling food in the lobby without authorization",
+      "A visitor carrying a concealed handgun with a state permit",
+      "Someone smoking inside the building's stairwell"
     ],
     correct: 0,
-    explain: "Fourth Amendment = unreasonable searches and seizures. Fifth = self-incrimination. Eighth = cruel and unusual punishment. Third = quartering. Screening searches at federal facilities are administrative searches based on implied consent — refuse and you're denied entry."
+    explain: "Peaceful First Amendment activity (leafleting) on exterior public sidewalks is protected as long as it doesn't block ingress/egress or disrupt operations. The other three are prohibited: unauthorized vending, firearms (state permits don't apply on federal property), and indoor smoking."
   },
   {
-    q: "What is the legal distinction between detention and arrest?",
+    tag: "LEGAL",
+    q: "A visitor shoves you while you're screening bags at the checkpoint, trying to push past. Beyond any state charge, what federal exposure does he potentially face?",
     options: [
-      "There is no distinction",
-      "Detention is a brief, temporary hold to maintain safety or await LE; arrest is taking a person into custody with intent to deliver them to the criminal justice system",
-      "Detention requires a warrant; arrest does not",
-      "Detention applies only to juveniles"
+      "None — PSOs aren't federal employees, so federal assault law doesn't apply",
+      "18 USC § 111, because a PSO performing contracted security duties is a 'person assisting' federal officers/employees and is protected",
+      "Only a 41 CFR citation, since it happened on federal property",
+      "18 USC § 1315, the PSO assault statute"
     ],
     correct: 1,
-    explain: "Detention is brief and limited — usually to address an immediate situation or hold a person for arriving LE. Arrest is custody for prosecution. PSO 'arrests' are legally detentions until LE takes custody."
+    explain: "18 USC § 1114 defines who's protected under § 111 to include 'any person assisting' a federal officer/employee in their duties. A PSO performing contracted protective duties qualifies. So forcibly shoving you can be charged federally under § 111 — there is no '§ 1315 assault statute' (1315 is the FPS authority statute)."
   },
   {
-    q: "A PSO operating an X-ray machine identifies what appears to be an improvised explosive device in a bag. What is the immediate correct action?",
+    tag: "LEGAL",
+    q: "Under 18 USC § 111, which scenario carries the HIGHEST potential penalty (up to 20 years)?",
     options: [
-      "Reach into the bag and pull the item out",
-      "Run the bag through the X-ray a second time to confirm",
-      "Stop the belt, do not disturb the bag, isolate the area, evacuate as needed, and notify the MegaCenter",
-      "Ask the owner to demonstrate that the item is harmless"
+      "A subject verbally threatens a federal employee but makes no contact",
+      "A subject shoves a federal employee with his hands",
+      "A subject swings a metal pipe at a federal employee, causing a head laceration",
+      "A subject blocks a doorway to impede an inspector"
     ],
     correct: 2,
-    explain: "Stop the belt immediately. Do not touch or move the bag. Isolate the area, evacuate per post orders, notify the MegaCenter for response. Never re-screen a suspected device or handle it yourself."
+    explain: "The 20-year tier under § 111 requires use of a deadly/dangerous weapon OR infliction of bodily injury. A metal pipe causing injury hits both. Verbal threats/no contact = up to 1 year (simple); shoving (contact) = up to 8 years; impeding without a weapon = lower tier."
   },
   {
-    q: "An individual passes through a walk-through magnetometer and triggers an alarm. The correct screening sequence is:",
+    tag: "DETENTION",
+    q: "You detain a subject for a crime you witnessed. LE says they're 25 minutes out. The subject is calm and compliant. What's the correct approach?",
     options: [
-      "Direct them to walk through faster next time",
-      "Place them in handcuffs immediately",
-      "Allow entry if they look professional",
-      "Have them divest pocket items and step back through, or use a hand-held wand for targeted screening"
-    ],
-    correct: 3,
-    explain: "Standard procedure: ask the person to remove and divest pocket items, then step back through. If it alarms again, use a hand-held wand for targeted screening. Repeated alarms or refusal = denied entry."
-  },
-  {
-    q: "If a person refuses screening at a federal facility checkpoint, the PSO should:",
-    options: [
-      "Tackle them and force them through",
-      "Deny entry and direct them to leave the checkpoint area",
-      "Allow entry but follow closely",
-      "Confiscate their identification"
-    ],
-    correct: 1,
-    explain: "Screening is an administrative search based on implied consent. Refusal to consent = denied entry, not arrest. The person is directed to leave the checkpoint. They are free to leave the facility."
-  },
-  {
-    q: "Post orders are best described as:",
-    options: [
-      "Optional suggestions for the PSO's reference",
-      "Legally binding operational documents specifying the precise duties at a given post",
-      "Marketing materials for the security company",
-      "Personal notes from previous PSOs"
-    ],
-    correct: 1,
-    explain: "Post orders are contract-mandated, legally binding documents that specify exactly what the PSO is to do at the assigned post — patrol routes, access control rules, emergency procedures, reporting requirements, etc. Deviation is grounds for removal."
-  },
-  {
-    q: "The FPS communications center that supports PSOs 24/7 is called:",
-    options: [
-      "The FPS Command Bunker",
-      "The FPS MegaCenter",
-      "Sector Control",
-      "Homeland West Operations"
-    ],
-    correct: 1,
-    explain: "The FPS MegaCenter is the 24/7/365 communications and dispatch center for FPS operations and contract PSOs. National number: 1-877-437-7411. MegaCenters route calls by area code."
-  },
-  {
-    q: "When writing an incident report, the PSO should use:",
-    options: [
-      "Third person, future tense, passive voice",
-      "First person, past tense, active voice; facts not opinions",
-      "Whatever style feels natural",
-      "Bullet points only, no sentences"
-    ],
-    correct: 1,
-    explain: "First person ('I observed'), past tense ('I responded'), active voice ('I saw the subject' not 'the subject was seen'). State facts, use direct quotes for statements, avoid opinions and conclusions. Reports may become courtroom evidence."
-  },
-  {
-    q: "Which acronym describes the proper fire response sequence?",
-    options: [
-      "PASS — Pull, Aim, Squeeze, Sweep",
-      "RACE — Rescue, Alarm, Contain, Extinguish/Evacuate",
-      "STOP — Stop, Think, Observe, Plan",
-      "SAFE — Secure, Assess, Find, Exit"
-    ],
-    correct: 1,
-    explain: "RACE = Rescue persons in danger, Alarm (pull alarm and call 911), Contain (close doors), Extinguish if small and you're trained OR Evacuate. PASS is the extinguisher operation acronym, not the response sequence."
-  },
-  {
-    q: "Federal active-shooter guidance is summarized as:",
-    options: [
-      "Engage, Suppress, Neutralize",
-      "Lock, Block, Counter",
-      "Run, Hide, Fight",
-      "Stop, Drop, Roll"
+      "Release him with a warning so you don't risk a false-imprisonment claim",
+      "Interrogate him about prior crimes to build a stronger case",
+      "Hold him only as reasonably necessary for LE to arrive, inform him why he's detained, use minimal force, and document everything",
+      "Transport him to the local precinct yourself to save LE time"
     ],
     correct: 2,
-    explain: "Run if you can, Hide if you can't run, Fight only as a last resort. As an armed PSO at an FPS post, your specific response is also dictated by your post orders — know that protocol cold."
+    explain: "A lawful detention is held only as long as reasonably necessary for LE to take custody. You inform the subject of the reason, use minimal force, and document thoroughly. Don't interrogate (not your role), don't transport (huge liability), and don't release a validly detained subject just out of fear of liability."
   },
   {
-    q: "Indicators of a suspicious package include:",
+    tag: "DETENTION",
+    q: "Which action by a PSO creates the GREATEST risk of a false-imprisonment lawsuit?",
     options: [
-      "Excessive postage",
-      "Misspelled words and restrictive markings like 'Personal'",
-      "Oily stains, protruding wires, or unusual odors",
-      "All of the above"
+      "Detaining a subject you personally watched assault someone, and calling LE",
+      "Detaining a subject for two hours on a hunch, with no witnessed offense and no LE notification",
+      "Denying entry to someone who refuses screening",
+      "Asking a loiterer to leave the property"
     ],
-    correct: 3,
-    explain: "All are classic indicators. Other signs: no return address, lopsided weight, hand-printed labels, excessive tape. If suspicious: do not move, do not open, isolate the area, evacuate as needed, notify the MegaCenter. Avoid radios near the device."
+    correct: 1,
+    explain: "Prolonged detention (two hours) based on a hunch, with no witnessed crime and no effort to summon LE, is the textbook false-imprisonment scenario. The others are defensible: witnessed offense + LE call is proper, denying entry for refused screening is lawful, and asking a loiterer to leave is routine."
   },
   {
-    q: "When a crime has occurred on the PSO's post and law enforcement is en route, the PSO should:",
+    tag: "SEARCH",
+    q: "A visitor refuses to let you screen her bag, saying \"I know my Fourth Amendment rights, you can't search me.\" The most accurate response is:",
     options: [
-      "Begin a thorough investigation and interview suspects",
-      "Move physical evidence to a 'safer' location",
-      "Secure the perimeter, protect evidence, separate witnesses, document observations, and brief responders on arrival",
-      "Clean up the scene to maintain a professional appearance"
+      "She's right — you cannot screen without a warrant, so let her in",
+      "Screening is an administrative search based on implied consent for entry; she can refuse, but then she is denied entry — she is not forced or arrested",
+      "Detain her for obstruction",
+      "Search the bag anyway because the Fourth Amendment doesn't apply on federal property"
+    ],
+    correct: 1,
+    explain: "Entry is conditioned on consent to screening (administrative search). She has the right to refuse — but the consequence is denial of entry, not a forced search or arrest. You never force the search; you simply deny access. She's free to leave."
+  },
+  {
+    tag: "SEARCH",
+    q: "While operating the X-ray, you see a clear outline of a handgun in a visitor's backpack. He's standing right there. The BEST immediate action is:",
+    options: [
+      "Loudly announce 'GUN!' and draw your weapon",
+      "Reach into the bag and remove the handgun to secure it",
+      "Maintain composure, do not let him retrieve the bag, discreetly signal/notify per post orders, control the item and subject, and summon LE",
+      "Send the bag back through to confirm before acting"
     ],
     correct: 2,
-    explain: "PSO's job is to preserve, not investigate. Secure the perimeter, protect physical evidence (don't touch it), separate witnesses so they don't influence each other's accounts, document time/observations, and hand off to responding LE."
+    explain: "Stay calm to avoid panic or tipping off the subject to grab the bag. Per post orders, you control access to the bag, prevent the subject from retrieving it, notify the MegaCenter/LE, and follow your facility's weapons-at-checkpoint protocol. Don't escalate by shouting, don't handle the weapon unnecessarily, and never re-screen a confirmed threat 'to be sure.'"
   },
   {
-    q: "A PSO falsely claiming to be a federal agent or marshal may be charged under:",
+    tag: "POST ORDERS",
+    q: "A post order at your facility appears to instruct you to do something that would clearly violate the law. What do you do?",
     options: [
-      "18 USC § 912 (Impersonating a federal officer)",
-      "18 USC § 111 (Assault on a federal officer)",
-      "40 USC § 1315 (FPS authority)",
-      "41 CFR § 102-74 (Federal facility rules)"
+      "Follow it exactly — post orders are legally binding",
+      "Ignore the entire post order set and use your own judgment",
+      "Do not carry out the unlawful instruction; notify your supervisor and the MegaCenter to get it clarified/corrected",
+      "Quit the post immediately and walk off"
+    ],
+    correct: 2,
+    explain: "Post orders are binding but they cannot require you to break the law. You don't blindly comply with an unlawful instruction, but you also don't unilaterally toss the whole post order set or abandon post. You flag it up the chain (supervisor + MegaCenter) for clarification and correction."
+  },
+  {
+    tag: "POST ORDERS",
+    q: "You're assigned to a post you've worked many times. At shift start, the correct practice is to:",
+    options: [
+      "Skip the post orders since you already know them",
+      "Read the current post orders, because they're updated and you're responsible for the latest version",
+      "Read them only if your supervisor reminds you",
+      "Rely on the previous shift's verbal briefing instead"
+    ],
+    correct: 1,
+    explain: "Post orders change and are updated. You're responsible for the current version every shift, even at a familiar post. 'I didn't know it changed' is not a defense. Reading them at shift start is standard practice."
+  },
+  {
+    tag: "COMMS",
+    q: "You witness a serious incident and need to call the FPS MegaCenter. Which opening gives the dispatcher what they need FIRST?",
+    options: [
+      "\"There's a huge problem, you need to send everyone now!\"",
+      "Your identity (name, Kerberos, post location), then nature of the incident and precise location",
+      "A full narrative of everything that led up to the event, in order",
+      "The subject's complete physical description before anything else"
+    ],
+    correct: 1,
+    explain: "Lead with WHO you are (name, employer, post) and WHAT/WHERE — nature of incident and precise location. That lets the dispatcher route the right response immediately. Detailed narrative and full descriptions follow once help is moving. Panic and vague urgency waste critical seconds."
+  },
+  {
+    tag: "EMERGENCY",
+    q: "A fire breaks out in a trash can in a hallway. It's small and contained, you're trained on the extinguisher, and there's a clear path. Per RACE, what's the correct order of priority?",
+    options: [
+      "Extinguish first since it's small, then worry about people",
+      "Rescue anyone in immediate danger, Alarm (pull alarm/call), Contain (close doors), then Extinguish or Evacuate",
+      "Evacuate the whole building before doing anything else",
+      "Contain by closing doors, then go find your supervisor for permission"
+    ],
+    correct: 1,
+    explain: "RACE is an ordered priority: Rescue → Alarm → Contain → Extinguish/Evacuate. Even when the fire is small and you could fight it, life safety (rescue) and notification (alarm) come first. Extinguishing a small contained fire is the last step, only if it's safe and you're trained."
+  },
+  {
+    tag: "EMERGENCY",
+    q: "You receive a bomb threat by phone. The caller is still talking. Of these, the single most valuable thing to do is:",
+    options: [
+      "Immediately hang up and pull the fire alarm",
+      "Keep the caller on the line and gather info (when/where/what it looks like), while signaling a coworker to notify the MegaCenter",
+      "Transfer the call to your supervisor",
+      "Tell the caller you're recording them so they'll stop"
+    ],
+    correct: 1,
+    explain: "Keep the caller talking — every second yields intelligence (location, timing, device description, voice/background clues) and the chance to assess credibility. Simultaneously, signal a coworker to notify the MegaCenter so response begins without you hanging up. Don't hang up, don't transfer (you lose the caller), don't antagonize them."
+  },
+  {
+    tag: "ACTIVE THREAT",
+    q: "DHS active-shooter guidance is Run-Hide-Fight. As an ARMED PSO at an FPS post, how does this apply to you?",
+    options: [
+      "Identically to an unarmed civilian — you always run first",
+      "It's the baseline framework, but your specific armed response is dictated by your post orders and FPS protocol, which you must know in advance",
+      "You ignore Run-Hide-Fight entirely because you're armed",
+      "You wait for a U.S. Marshal before taking any action"
+    ],
+    correct: 1,
+    explain: "Run-Hide-Fight is the general public framework. As an armed PSO, your actual response is governed by your post-specific orders and FPS protocol — which may direct you to address the threat to protect life. The key exam point: know your facility's active-threat protocol cold, in advance."
+  },
+  {
+    tag: "CBRNE",
+    q: "You respond to a report of several people suddenly collapsing in an enclosed mailroom, with a faint chemical odor present. The FIRST priority is:",
+    options: [
+      "Run in immediately to drag victims out",
+      "Recognize possible chemical/CBRNE exposure, do NOT rush in, move yourself and others upwind/uphill/away, isolate the area, and notify for hazmat response",
+      "Open all the windows and turn on fans",
+      "Begin CPR on the nearest victim inside the room"
+    ],
+    correct: 1,
+    explain: "Multiple simultaneous casualties + chemical odor in an enclosed space = possible chemical agent. Rushing in makes you the next casualty. Recognize the hazard, stay out, move people upwind/uphill, isolate, and summon hazmat/EMS. You can't help anyone if you're down too."
+  },
+  {
+    tag: "CBRNE",
+    q: "Which combination of features would make a piece of mail MOST suspicious?",
+    options: [
+      "Typed address, correct postage, company logo, expected delivery",
+      "No return address, excessive postage, oily stains, lopsided weight, and 'Personal — Do Not X-Ray' marking",
+      "First-class stamp, handwritten thank-you note visible through window",
+      "Standard business envelope from a known vendor"
+    ],
+    correct: 1,
+    explain: "Classic suspicious-mail indicators stack here: no return address, excessive postage, oily stains (possible leakage), uneven weight, and restrictive markings designed to prevent inspection. Any one is a flag; all together is a strong signal. Don't handle it — isolate, evacuate as needed, notify."
+  },
+  {
+    tag: "CRIME SCENE",
+    q: "A shooting just occurred on your post and the scene is now safe. LE is en route. A building manager wants to walk through to 'see what happened.' You should:",
+    options: [
+      "Let him through — he runs the building",
+      "Deny access and maintain the perimeter; only authorized investigators enter, to preserve evidence",
+      "Walk him through but tell him not to touch anything",
+      "Let him in if he promises to stay quiet about it"
+    ],
+    correct: 1,
+    explain: "Your job is to preserve the scene, which means keeping EVERYONE out — including managers and curious staff — until investigators take over. Every person who enters risks contaminating or altering evidence. Authority over the building does not equal authority to enter a crime scene."
+  },
+  {
+    tag: "CRIME SCENE",
+    q: "Which of these is an acceptable reason to disturb a crime scene before investigators arrive?",
+    options: [
+      "To collect shell casings so they don't get lost",
+      "To take photos for your personal records",
+      "To render life-saving medical aid to an injured person",
+      "To tidy up so the scene looks professional"
+    ],
+    correct: 2,
+    explain: "The only justification to alter a crime scene is an overriding safety/life need — like rendering medical aid, or stopping a hazard (e.g., turning off running water/gas). Collecting evidence, personal photos, and 'tidying' all contaminate the scene and are improper for a PSO."
+  },
+  {
+    tag: "REPORT WRITING",
+    q: "Which sentence belongs in a proper incident report?",
+    options: [
+      "\"The suspect was obviously a troublemaker looking for a fight.\"",
+      "\"I observed the male subject raise his right fist, step toward Mr. Lee, and shout, 'I'll hurt you.'\"",
+      "\"Everyone could tell the guy was dangerous.\"",
+      "\"It was probably just a misunderstanding that got out of hand.\""
+    ],
+    correct: 1,
+    explain: "Reports state observable FACTS in first person, past tense, active voice — and use direct quotes for statements. The other three are opinions/conclusions ('troublemaker,' 'dangerous,' 'probably a misunderstanding') that have no place in a factual report and can sink you in court."
+  },
+  {
+    tag: "REPORT WRITING",
+    q: "After submitting an incident report, you remember an important detail you left out. What's correct?",
+    options: [
+      "Edit the original report to insert the detail",
+      "Leave it out — adding it now looks suspicious",
+      "Write and submit a supplemental report with the additional information; never alter the original",
+      "Tell your supervisor verbally and don't write anything"
+    ],
+    correct: 2,
+    explain: "Never alter a submitted report — that destroys its credibility and can look like tampering. Instead, write a supplemental report documenting the additional information. The record stays intact and is properly updated."
+  },
+  {
+    tag: "CONDUCT",
+    q: "Three hours before your shift, a friend offers you a single beer at lunch. The correct choice is:",
+    options: [
+      "One beer is fine, it'll wear off",
+      "Decline — duty rules prohibit alcohol on duty and typically within a set window (commonly 8 hours) before a shift, and you're subject to testing",
+      "Have it but chew gum to hide it",
+      "Only acceptable if you're working an unarmed post"
+    ],
+    correct: 1,
+    explain: "Alcohol is prohibited on duty and within the pre-shift window (commonly 8 hours) defined by contract/policy, and PSOs are subject to drug/alcohol testing. Being armed makes it even more serious, but the rule applies regardless of post type. Decline."
+  },
+  {
+    tag: "CONDUCT",
+    q: "A local reporter asks you detailed questions about the building's security procedures, camera locations, and PSO schedules. You should:",
+    options: [
+      "Answer fully — it's public information",
+      "Decline to disclose security procedures, post details, and schedules; refer media inquiries per post orders (typically to FPS/PIO or management)",
+      "Answer only the questions about cameras",
+      "Give general info but make them promise not to publish it"
+    ],
+    correct: 1,
+    explain: "Security procedures, camera placements, patrol schedules, and tenant details are sensitive and must not be disclosed to unauthorized persons — including media. Refer media inquiries through the proper channel per your post orders (usually FPS public affairs or company management)."
+  },
+  {
+    tag: "INTEGRATED",
+    q: "You're on a PROPRIETARY-jurisdiction post. You witness a subject commit a felony assault, restrain him, and call it in. Which combination is correct?",
+    options: [
+      "Local police have primary authority here; you detain until they arrive, notify FPS for awareness, and document — you do not investigate or transport",
+      "FPS has exclusive authority; only they can respond",
+      "You have full arrest authority under 40 USC § 1315",
+      "You must release him because PSOs can't detain on proprietary posts"
     ],
     correct: 0,
-    explain: "18 USC § 912 makes it a federal crime to falsely pretend to be a federal officer or employee. PSOs must identify as private security or as a PSO — never as a federal agent, marshal, police officer, or other LE official."
+    explain: "On proprietary jurisdiction, the state retains law enforcement authority, so local police handle it. You may still detain for a crime committed in your presence (state citizen's-arrest authority), notify FPS for situational awareness, and document — but you don't investigate, don't transport, and you have no § 1315 authority."
+  },
+  {
+    tag: "INTEGRATED",
+    q: "A subject becomes verbally aggressive at your checkpoint, cursing and refusing to lower his voice, but makes no threat and no move toward anyone. The BEST response is:",
+    options: [
+      "Immediately go hands-on and detain him for disorderly conduct",
+      "Draw OC spray as a precaution",
+      "Use verbal de-escalation and clear commands; maintain officer presence and reactionary gap; escalate only if his behavior escalates to a real threat",
+      "Match his tone so he knows you're serious"
+    ],
+    correct: 2,
+    explain: "Aggressive words alone, with no threat or action, call for the LOW end of the force continuum: presence and verbal de-escalation. You keep a reactionary gap and stay professional. You don't jump to hands-on or OC for words alone — force must match the actual threat, and matching his hostility only escalates."
+  },
+  {
+    tag: "INTEGRATED",
+    q: "Which statement best captures the PSO's fundamental role?",
+    options: [
+      "To investigate crimes and make arrests like a police officer",
+      "To deter, detect, observe, report, and respond per post orders — acting as the eyes and ears of FPS and summoning law enforcement as needed",
+      "To enforce all federal, state, and local laws with full police powers",
+      "To remain stationary and only act when directly ordered by FPS"
+    ],
+    correct: 1,
+    explain: "The PSO is a force multiplier for FPS: deter through presence, detect and observe threats, report accurately, and respond within the scope of training and post orders — summoning sworn LE to investigate and arrest. PSOs are not police, don't have full police powers, but also aren't passive — they act decisively within their defined role."
   }
 ];
 
@@ -1264,23 +623,33 @@ let correctCount = 0;
 let answeredCount = 0;
 const letters = ['A','B','C','D','E'];
 
-questions.forEach((item, i) => {
-  const card = document.createElement('div');
-  card.className = 'quiz-card';
-  card.innerHTML = `
-    <div class="qnum">Question ${String(i+1).padStart(2,'0')} / ${String(questions.length).padStart(2,'0')}</div>
-    <div class="question">${item.q}</div>
-    <ul class="options" data-correct="${item.correct}" data-answered="false">
-      ${item.options.map((opt, j) => `
-        <li class="option" data-index="${j}">
-          <span class="letter">${letters[j]}.</span>${opt}
-        </li>
-      `).join('')}
-    </ul>
-    <div class="explain"><strong>Explanation:</strong> ${item.explain}</div>
-  `;
-  container.appendChild(card);
-});
+function buildExam() {
+  container.innerHTML = '';
+  correctCount = 0;
+  answeredCount = 0;
+  correctEl.textContent = '0';
+  answeredEl.textContent = '0';
+  statusEl.textContent = 'Need 80% (24/30) to pass';
+  statusEl.className = 'score-status';
+
+  questions.forEach((item, i) => {
+    const card = document.createElement('div');
+    card.className = 'quiz-card';
+    card.innerHTML = `
+      <div class="qnum"><span>Question ${String(i+1).padStart(2,'0')} / ${String(questions.length).padStart(2,'0')}</span><span class="qtag">${item.tag}</span></div>
+      <div class="question">${item.q}</div>
+      <ul class="options" data-correct="${item.correct}" data-answered="false">
+        ${item.options.map((opt, j) => `
+          <li class="option" data-index="${j}">
+            <span class="letter">${letters[j]}.</span><span class="otext">${opt}</span>
+          </li>
+        `).join('')}
+      </ul>
+      <div class="explain"><strong>Explanation:</strong> ${item.explain}</div>
+    `;
+    container.appendChild(card);
+  });
+}
 
 container.addEventListener('click', e => {
   const opt = e.target.closest('.option');
@@ -1298,8 +667,7 @@ container.addEventListener('click', e => {
     else if (idx === chosen) o.classList.add('incorrect');
   });
 
-  const explain = list.parentElement.querySelector('.explain');
-  explain.classList.add('show');
+  list.parentElement.querySelector('.explain').classList.add('show');
 
   answeredCount++;
   if (chosen === correctIdx) correctCount++;
@@ -1313,7 +681,7 @@ container.addEventListener('click', e => {
       statusEl.textContent = `PASSED · ${pct}% · POST-READY`;
       statusEl.className = 'score-status pass';
     } else {
-      statusEl.textContent = `${pct}% · Need ${needed}/${questions.length} · Review`;
+      statusEl.textContent = `${pct}% · Need ${needed}/${questions.length} · Review & retake`;
       statusEl.className = 'score-status fail';
     }
   } else {
@@ -1322,6 +690,13 @@ container.addEventListener('click', e => {
     statusEl.className = onPace ? 'score-status pass' : 'score-status fail';
   }
 });
+
+function resetExam() {
+  buildExam();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+buildExam();
 </script>
 
 </body>
